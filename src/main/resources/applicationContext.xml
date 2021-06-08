@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ctx="http://www.springframework.org/schema/util"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util https://www.springframework.org/schema/util/spring-util.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
+   <context:property-placeholder location="classpath:application.properties"/>
     <bean id="myfortuneservice" class="com.udemy.cousedemo.springboot.HappyFortuneService"></bean>
     <bean id="mycoach" class="com.udemy.cousedemo.springboot.footballCoach" >
 <!--        <constructor-arg ref="myfortuneservice"/>  constructor injection config-->
         <property name="FortuneService" ref="myfortuneservice"/>
-        <property name="emailadress" value="rida.benjadi@mail.com"/>
-        <property name="team" value="smart transformation"/>
+        <property name="emailadress" value="${foo.email}"/>
+        <property name="team" value="${foo.team}"/>
    </bean>
 
 </beans>
