@@ -14,6 +14,7 @@ public class SpringbootcourseApplication {
         Coach coa2=ctx.getBean("mycoach",footballCoach.class);
         System.out.println(coa.getDailyFortune());
         System.out.println(coa2.getDailyFortune());
+        System.out.println("footbal coatch mail: "+coa2.getEmailadress());
 
     }
 

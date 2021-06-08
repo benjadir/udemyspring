@@ -6,7 +6,9 @@
     <bean id="myfortuneservice" class="com.udemy.cousedemo.springboot.HappyFortuneService"></bean>
     <bean id="mycoach" class="com.udemy.cousedemo.springboot.footballCoach" >
 <!--        <constructor-arg ref="myfortuneservice"/>  constructor injection config-->
-        <property name="FortuneService" ref="myfortuneservice"></property>
+        <property name="FortuneService" ref="myfortuneservice"/>
+        <property name="emailadress" value="rida.benjadi@mail.com"/>
+        <property name="team" value="smart transformation"/>
    </bean>
 
 </beans>

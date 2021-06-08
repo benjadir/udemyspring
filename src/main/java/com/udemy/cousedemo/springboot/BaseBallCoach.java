@@ -16,4 +16,9 @@ public class BaseBallCoach implements  Coach{
     public String getDailyFortune() {
         return this.fortuneService.getFortune();
     }
+
+    @Override
+    public String getEmailadress() {
+        return null;
+    }
 }
